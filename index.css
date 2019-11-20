@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    align-items: center;
+}
+
+a {
+    color: rgb(78, 76, 76);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+  
+button, label {
+    font-size: 24px;
+}
+
+button {
+    height: 60px;
+    width: 250px;
+    color: white;
+    background-color: black;
+}
+
+button, select {
+    font-style: bold;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    cursor: pointer;
+    border: 5px solid black;
+    border-radius: 5px;
+    display: block;
+}
+
+h1, label {
+    text-align: center;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 40px; 
+    text-align: center;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: 30px;
+    margin: 30px 0px 5px 0px;
+}
+
+p {
+    font-size: 24px;
+    margin: 5px 0px 5px 0px;
+}
+
+select {
+    color: black;
+    background-color: white;
+    width: 250px;
+
+}
+
+label {
+    display: block;
+    font-size: 30px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.numberResults {
+    height: 60px;
+}
+
+.state {
+    height: 200px;
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}

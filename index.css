@@ -20,6 +20,7 @@ button {
     width: 250px;
     color: white;
     background-color: black;
+    margin-bottom: 100px;
 }
 
 button, select {
@@ -27,12 +28,11 @@ button, select {
     font-size: 24px;
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 4px;
-    padding-bottom: 4px;
     padding-left: 10px;
+    padding-bottom: 4px;
     cursor: pointer;
     border: 5px solid black;
     border-radius: 5px;
@@ -65,7 +65,7 @@ select {
     color: black;
     background-color: white;
     width: 250px;
-
+    margin-bottom: 20px;
 }
 
 label {
@@ -74,7 +74,7 @@ label {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 800px;
     margin: 0 auto;
 }
 

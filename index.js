@@ -11,15 +11,29 @@ function displayParks(responseJson) {
     console.log(responseJson)
 
     for (let i=0; i < responseJson.data.length; i++) {
+        console.log(responseJson.data[i].addresses[0].line1)
         $('.js-results').append(`<h2>${responseJson.data[i].fullName}</h2>
         <p>${responseJson.data[i].description}</p><br>
-        <p>Park page: <a href=${responseJson.data[i].url}>${responseJson.data[i].url}</a></p>`)
+        <p>Park page: <a href=${responseJson.data[i].url}>${responseJson.data[i].url}</a></p><br>
+        <p>Address:</p>`)
+
+        for (let j=0; j < responseJson.data[i].addresses.length; j++) {
+            if (responseJson.data[i].addresses[j].type === "Physical") {
+                $('.js-results').append(`<p>${responseJson.data[i].addresses[j].line1}</p>
+                <p>${responseJson.data[i].addresses[j].line2}</p>
+                <p>${responseJson.data[i].addresses[j].line3}</p>
+                <p>${responseJson.data[i].addresses[j].city}, 
+                ${responseJson.data[i].addresses[j].stateCode}, 
+                ${responseJson.data[i].addresses[j].postalCode}</p>`)
+            }
+        }    
+            
     }
 }
 
 function getNationalParks(stateCodes, requestedNumberResults) {
     console.log(`getNationalParks ran, stateCodes is ${stateCodes}, and requestedNumberResults ${requestedNumberResults}`)
-    fetch (`https://developer.nps.gov/api/v1/parks?stateCode=${stateCodes}&limit=${requestedNumberResults}&api_key=${apiKey}`)
+    fetch (`https://developer.nps.gov/api/v1/parks?stateCode=${stateCodes}&limit=${requestedNumberResults}&api_key=${apiKey}&fields=addresses`)
         .then(response => response.json())
         .then(responseJson => 
             // console.log(responseJson))
@@ -50,20 +64,7 @@ function formatStates(selectedStates, requestedNumberResults) {
     }
 
     getNationalParks(stateCodes, requestedNumberResults)
-}    
-
-// function formatStates(selectedStates) {
-//     let stateCodes = `stateCode=${selectedStates[0]}`
-
-//     if (selectedStates.length > 1) {
-//         for (let i = 1; i < selectedStates.length; i++) {
-//             $(stateCodes).append(`%2c${selectedStates[i]}`)
-//         }
-//     }
-
-//     console.log(`stateCodes is ${stateCodes}`)
-//     return stateCodes
-// }
+}
 
 function submitForm() {
     $('.js-submit').on('click', function() {

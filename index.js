@@ -16,7 +16,7 @@ function displayParks(responseJson) {
         <p>Park page: <a href=${responseJson.data[i].url}>${responseJson.data[i].url}</a></p><br>
         <p>Address:</p>`)
 
-        for (let j=0; j < (responseJson.data[i].addresses.length - 1); j++) {
+        for (let j=0; j < (responseJson.data[i].addresses.length); j++) {
             if (responseJson.data[i].addresses[j].type === "Physical") {
                 $('.js-results').append(`<p>${responseJson.data[i].addresses[j].line1}</p>
                 <p>${responseJson.data[i].addresses[j].line2}</p>

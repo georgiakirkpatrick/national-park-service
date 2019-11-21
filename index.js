@@ -9,16 +9,11 @@ function displayParks(responseJson) {
     $('.js-results').append(`<h2>Results</h2>`)
     console.log('`displayParks` ran')
     console.log(responseJson)
-    // console.log(responseJson.data[1].addresses[1].postalCode)
-    let firstResultData = responseJson.data[1]
-    console.log('firstResultData[1] is', firstResultData.addresses[$1])
 
     for (let i=0; i < responseJson.data.length; i++) {
         $('.js-results').append(`<h2>${responseJson.data[i].fullName}</h2>
         <p>${responseJson.data[i].description}</p><br>
-        <p>Park page: <a href=${responseJson.data[i].url}>${responseJson.data[i].url}</a></p>
-        <p>${responseJson.data[i]}<p>
-        <p>${responseJson.data[i].addresses[$i]}<p>`)
+        <p>Park page: <a href=${responseJson.data[i].url}>${responseJson.data[i].url}</a></p>`)
     }
 }
 
